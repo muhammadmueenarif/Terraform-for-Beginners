@@ -76,3 +76,53 @@ So we have different types of tools for this thing. we are basically going to fo
 So in short infrastructure code is nothing but automation plus consistency plus speed. And also traceability.
 
 
+
+Lecture 03. Terraform Workflow / Working of Terraform
+So the thing is like Terraform as a translator between your code and your cloud provider, whether it's
+AWS, Azure or GCP. So we'll be writing a code and this code will create our infrastructure for us like servers, 
+databases, storage buckets and so on.
+So it can be any cloud provider either AWS Azure or GCP.
+
+we start by writing our.tf file. So we create a file with the.tf extension for any terraform file. And in 
+this file we describe our requirement. Like we describe we need one EC2 instance one or S3 bucket we need.
+So basically we describe the infrastructure in this file.
+after that we run a few commands. 
+1. terraform init.
+These are the basic commands which we will be use for like every time we will use this.
+
+terraform init is used to initialize the project. once we will install the terraform then we'll see it.
+it is used to initialize the project.
+
+Next we have 
+2.Terraform plan. 
+it is used to preview what changes Terraform is about to make. it preview thing like what are the changes 
+going to happen if we will run. If you will run this particular command then we have 
+
+3. Terraform apply.
+So as the name suggest, It will basically provision or change your infrastructure or create your infrastructure.
+
+
+Next we have a 
+4. Terraform destroy.
+why destroy. Suppose you don't want to use your infrastructure after some time, like after your shift is over 
+or something like that. So if you don't want to use it and you want to save cost, then in that case you will 
+use the Terraform Destroy. It will tear it all down.
+
+Whatever infrastructure you have created, all will get vanished and deleted. 
+So what is what's interesting is so interesting part here is Terraform keeps track of what is what's
+deployed using something called a 
+
+state file.
+
+So this is one of the important concept state file. in this what happens. it's just like a memory, like you 
+can say as the Terraform memory,
+it knows what resources it has created so that it doesn't create any duplicate resource and it doesn't 
+delete any wrong resources.
+And it all happens through a provider plugin. So basically we have a provider plugins like we have AWS 
+plugin Azure and GCP all. so it works with the provider plugins.
+
+We'll see providers in our next classes.
+
+So the basically the cycle is first we'll write the terraform code.
+Then we have a plan. Then we will be applying. Then we'll get the infra. Then we can track it via state file.
+But first we will install Terraform. 
