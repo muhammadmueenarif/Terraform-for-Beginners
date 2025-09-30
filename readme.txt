@@ -47,3 +47,32 @@ in the production environment using Terraform.
 
 Lecture 02. What is IaC?
 Infrastructure as a Code. 
+Let's imagine this. You are setting up a new project in AWS. And you have to set up EC2. So we follow some 
+of the steps like we search for that service. Then we open the console and click on launch EC2. Then we 
+select the Ami. Right after that we select uh the networking settings we configure like which ports to open, 
+then security groups. And then we hit the launch button launch EC2. Then it creates EC2 instance for us.
+
+So just imagine this thing like every single time you want to do this. And that too for all the different environments 
+where the configuration will be same everywhere.
+
+Suppose we have five different environments like dev, UAT, Preproduction, prod. it's a very painful thing 
+to do the same thing again and again. if you miss any configuration, that is also a big thing.
+
+So what basically a Terraform do or any infrastructure as a code tool do. we can just define a code okay.
+We can write a code. in that code we can define like create a VPC. Then what are the networking configuration. 
+we can define security thing. And also we can choose any gateway we want to use in our infrastructure.
+So all these things we can define into a code. And we'll get our infrastructure ready.
+And beauty thing is it's repeatable.
+And also you can do the same thing in all the different environments. So you have to write once and use it at multiple places.
+
+So what IAC does. So it turns your Infrastructure into code which means you can treat it just like your app code.
+Test it, review it, and automate it.
+
+And tools like like we have different, uh, IC tools like, uh, in this course which will we are going to talk 
+about the Terraform. But other tools are also there like CloudFormation. It's from AWS. Then we have GCP also 
+like Google Cloud Cloud Deployment, and also we have some Plumie tool.
+
+So we have different types of tools for this thing. we are basically going to focus on this Terraform.
+So in short infrastructure code is nothing but automation plus consistency plus speed. And also traceability.
+
+
