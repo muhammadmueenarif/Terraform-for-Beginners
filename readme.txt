@@ -126,3 +126,47 @@ We'll see providers in our next classes.
 So the basically the cycle is first we'll write the terraform code.
 Then we have a plan. Then we will be applying. Then we'll get the infra. Then we can track it via state file.
 But first we will install Terraform. 
+
+
+
+Lecture 04. Install Terraform
+go on to the Google and search for this install Terraform.
+
+You will get the link. https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+Just click on it.  So according to your OS you can uh choose installation. You can see windows and Linux.
+So just take the first command and open up your terminal, paste it. 
+sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+It will take some time.
+
+Then we have wget command. 
+wget -O- https://apt.releases.hashicorp.com/gpg | \
+gpg --dearmor | \
+sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+
+It will install Hashicorp's GPG key.
+
+Next what we have verify. we can verify.
+gpg --no-default-keyring \
+--keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+--fingerprint
+
+
+then we have to add official to your system.
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+
+Next we have update. sudo apt update
+Then we have the final command that is 
+sudo apt-get install terraform.
+
+And install it. Then we will check the version. And we are done. it is installed. 
+do terraform --version.
+it will show version like 1.12.2.
+
+
+Terraform --Help.
+It will show all the commands.
+
+init validate plan apply restore and other commands we have console format get graph login logout all commands.
+So finally we have installed Terraform. So from our next class we will start the actual practical implementation with the AWS.
